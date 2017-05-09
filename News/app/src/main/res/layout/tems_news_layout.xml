@@ -2,39 +2,69 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="5dp"
-    android:paddingBottom="15dp"
-    android:orientation="horizontal" >
+    android:orientation="horizontal"
+    android:paddingBottom="20dp"
+    android:paddingTop="20dp" >
 
-    <ImageView
-        android:layout_gravity="center"
+    <com.example.lbj.news.view.MyImageView
+        android:scaleType="fitXY"
+        android:background="#ff0000"
         android:id="@+id/item_img_icon"
         android:layout_width="68dp"
         android:layout_height="68dp"
-        android:src="@drawable/icon"
-        />
-    <LinearLayout
         android:layout_gravity="center"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/icon" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_gravity="center"
+        android:orientation="vertical" >
+
         <TextView
-            android:singleLine="true"
             android:id="@+id/item_tv_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="3dp"
+            android:singleLine="true"
             android:text="title"
-            android:textColor="#000"
-            android:textSize="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
         <TextView
-            android:maxLines="2"
             android:id="@+id/item_tv_des"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
             android:text="des"
-            android:textSize="14sp"
-            android:textColor="#666"
+            android:textColor="#666666"
+            android:textSize="13sp" />
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" >
+
+            <TextView
+                android:id="@+id/item_tv_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="comment"
+                android:textColor="#000000"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_marginRight="10dp"
+                android:id="@+id/item_tv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="娱乐"
+                android:textColor="#666666"
+                android:textSize="13sp" />
+        </RelativeLayout>
     </LinearLayout>
 
 </LinearLayout>

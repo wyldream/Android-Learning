@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.lbj.news.R;
 import com.example.lbj.news.bean.NewsBean;
+import com.example.lbj.news.view.MyImageView;
 
 import java.util.ArrayList;
 
@@ -56,15 +57,20 @@ public class NewsAdapter extends BaseAdapter{
             //view = layoutInflater.inflate(R.layout.tems_news_layout,null);
         }
         //2、获取控件(ctrl+alt+v获取返回类型快捷键)
-        ImageView item_img_icon = (ImageView) view.findViewById(R.id.item_img_icon);
+        MyImageView item_img_icon = (MyImageView) view.findViewById(R.id.item_img_icon);
         TextView item_tv_des = (TextView) view.findViewById(R.id.item_tv_des);
         TextView item_tv_title = (TextView) view.findViewById(R.id.item_tv_title);
-        //3、获取position位置的条目对应的list集合中的新闻数据，Bean对象
+        TextView item_tv_comment = (TextView) view.findViewById(R.id.item_tv_comment);
+        TextView item_tv_type = (TextView) view.findViewById(R.id.item_tv_type);
+
+
+        //3.获取postion位置条目对应的list集合中的新闻数据，Bean对象
         NewsBean newsBean = list.get(i);
-        //4、将内容和控件绑定
-        item_img_icon.setImageDrawable(newsBean.icon);
+        //4.将数据设置给这些子控件做显示
+        item_img_icon.setImageUrl(newsBean.icon_url);
         item_tv_title.setText(newsBean.title);
         item_tv_des.setText(newsBean.des);
+        item_tv_comment.setText("评论："+newsBean.comment);
         //这里注意一定要改返回值，否则报错，且不会定位错误
         return view;
     }
