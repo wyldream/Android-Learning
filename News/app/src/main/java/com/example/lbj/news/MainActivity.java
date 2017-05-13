@@ -61,7 +61,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 handler.sendMessage(msg);
             }
         }).start();
-
+        
+        //3.设置listview条目的点击事件
+        lv_news.setOnItemClickListener(this);
     }
 
     //给条目设置点击事件（实现一个OnItemClickListener接口）
